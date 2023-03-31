@@ -1,6 +1,6 @@
 Name:		texlive-chemformula
 Version:	61719
-Release:	1
+Release:	2
 Summary:	Command for typesetting chemical formulas and reactions
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chemformula
