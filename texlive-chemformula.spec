@@ -3,7 +3,7 @@ Version:	61719
 Release:	2
 Summary:	Command for typesetting chemical formulas and reactions
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chemformula
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chemformula
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemformula.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemformula.doc.r%{version}.tar.xz
