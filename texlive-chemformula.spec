@@ -1,38 +1,25 @@
-Name:		texlive-chemformula
-Version:	61719
-Release:	2
+%global tl_name chemformula
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	4.17
+Release:	%{tl_revision}.1
 Summary:	Command for typesetting chemical formulas and reactions
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chemformula
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemformula.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemformula.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chemformula.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chemformula.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(units)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 The package provides a command to typeset chemical formulas and
-reactions in support of other chemistry packages (such as
-chemmacros). The package used to be distributed as a part of
-chemmacros.
+reactions in support of other chemistry packages (such as chemmacros).
+The package used to be distributed as a part of chemmacros.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/chemformula
-%doc %{_texmfdistdir}/doc/latex/chemformula
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
